@@ -1,11 +1,10 @@
 # import pandas as pd
-from typing_extensions import final
 import requests 
 import sys
 from  config.database_connection import Connect
-from datetime import datetime
 import time
 import json
+import os
 
 start_program = time.time()
 url_countries = r'https://api.covid19api.com/countries'
@@ -101,7 +100,7 @@ for country in countries:
 print('Country data has been read it successfully!')
 
 # save json as it was downloaded from the web
-with open('/docs/documents/data.txt', 'w') as file:
+with open(os.path.join(os.getcwd(), r'docs\documents\data.txt'), 'w') as file:
     json.dump(data_list, file)
 
 # insert data into COVID database in localhost mssql
