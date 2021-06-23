@@ -101,7 +101,7 @@ for country in countries:
 print('Country data has been read it successfully!')
 
 # save json as it was downloaded from the web
-with open('data.json', 'w') as file:
+with open('/docs/documents/data.txt', 'w') as file:
     json.dump(data_list, file)
 
 # insert data into COVID database in localhost mssql
